@@ -1,0 +1,5 @@
+FROM cgr.dev/chainguard/graalvm-native:latest
+ARG EXECUTABLE_PATH
+EXPOSE 8080
+COPY ${EXECUTABLE_PATH} app
+ENTRYPOINT ["/app"]

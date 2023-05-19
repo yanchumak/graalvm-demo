@@ -1,0 +1,8 @@
+FROM debian:stable-slim AS build-env
+
+FROM gcr.io/distroless/base
+ARG EXECUTABLE_PATH
+EXPOSE 8080
+COPY ${EXECUTABLE_PATH} app
+COPY --from=build-env /lib/x86_64-linux-gnu/libz.so.1 /lib/x86_64-linux-gnu/libz.so.1
+ENTRYPOINT ["/app"]
