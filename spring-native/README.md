@@ -3,7 +3,7 @@ Build native executable
 mvn -Pnative native:compile
 ```
 
-Build docker image
+Build docker image using Buildpacks
 ```shell
 mvn -Pnative spring-boot:build-image
 ```
